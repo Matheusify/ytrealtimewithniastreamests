@@ -1,13 +1,13 @@
 YT.multisearch = {
   getResults: function (e) {
     $.getJSON(
-      "https://api.subscribercounter.nl/api/youtube-subscriber-count/" + encodeURIComponent(e) + "/search",
+      "https://api.subscriberwars.space/search/youtube/channel/%20" + encodeURIComponent(e),
       function (e) {
         $er = $("#results");
         $er.html("");
-        e.data.forEach(function (f) {
+        e.item.forEach(function (f) { 
           if (f.id == YT.live.vs1 || f.id == YT.live.vs2) return;
-          $er.append(YT.multisearch.giveHtml(f.name, f.picture, f.id));
+          $er.append(YT.multisearch.giveHtml(f.title, f.pfp, f.id));
         });
       },
     );
