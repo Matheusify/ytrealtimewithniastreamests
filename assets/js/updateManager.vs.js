@@ -32,4 +32,31 @@ YT.updateManager = {
       $(document.body).addClass("leading-right").removeClass("leading-left");
     }
   },
+
+  updateChannelI1D: function (e) {
+    YT.live.channelI1D = e;
+      if (YT.live.channelI1D == "UCX6OQ3DkcsbYNE6H8uQQuVA") {
+        let textyab = document.getElementById("yt_substext1").innerHTML;
+        let idkyab = textyab.replace(/Estimated/gi, "Studio")
+        document.getElementById("yt_substext1").textContent = idkyab
+      }
+      else {
+        let textyab = document.getElementById("yt_substext1").innerHTML;
+        let idkyab = textyab.replace(/Studio/gi, "Estimated")
+        document.getElementById("yt_substext1").textContent = idkyab
+      }
+  },
+  updateChannelID2: function (f) {
+    YT.live.channelID2 = f;
+      if (YT.live.channelID2 == "UCX6OQ3DkcsbYNE6H8uQQuVA") {
+        let textya1b = document.getElementById("yt_substext2").innerHTML;
+        let idkya1b = textya1b.replace(/Estimated/gi, "Studio")
+        document.getElementById("yt_substext2").textContent = idkya1b
+      }
+      else {
+        let textya1b = document.getElementById("yt_substext2").innerHTML;
+        let idkya1b = textya1b.replace(/Studio/gi, "Estimated")
+        document.getElementById("yt_substext2").textContent = idkya1b
+      }
+  },
 };

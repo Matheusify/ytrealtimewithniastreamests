@@ -17,6 +17,7 @@ YT.live = {
       }
     });
   },
+
   timer: null,
   start: function () {
     this.stop();

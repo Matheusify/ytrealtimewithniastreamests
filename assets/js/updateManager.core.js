@@ -28,6 +28,7 @@ YT.updateManager = {
   updateVideos: function (e) {
     $("#yt_videos").text(e);
   },
+
   updateChannelID: function (e) {
     YT.live.channelID = e;
     $("#yt_shareurl").val(YT.urls.getCurrent());
@@ -41,5 +42,16 @@ YT.updateManager = {
         YT.live.channelID +
         '/large" />',
     );
+    if (YT.live.channelID == "UCX6OQ3DkcsbYNE6H8uQQuVA") {
+      let textyab = document.getElementById("yt_substext").innerHTML;
+      let idkyab = textyab.replace(/Estimated/gi, "Studio")
+      document.getElementById("yt_substext").textContent = idkyab
+    }
+    else {
+      let textyab = document.getElementById("yt_substext").innerHTML;
+      let idkyab = textyab.replace(/Studio/gi, "Estimated")
+      document.getElementById("yt_substext").textContent = idkyab
+    };
   },
+
 };
