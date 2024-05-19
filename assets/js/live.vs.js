@@ -2,8 +2,8 @@ YT.live = {
   vs1: "",
   vs2: "",
   update: function () {
-    $.getJSON("https://nia-statistics.com/api/get?platform=youtube&type=channel&id=" + YT.live.vs1 + "", function (f) {
-      $.getJSON("https://nia-statistics.com/api/get?platform=youtube&type=channel&id=" + YT.live.vs2 + "", function (g) {
+    $.getJSON("https://axern.space/api/get?platform=youtube&type=channel&id=" + YT.live.vs1 + "", function (f) {
+      $.getJSON("https://axern.space/api/get?platform=youtube&type=channel&id=" + YT.live.vs2 + "", function (g) {
         YT.updateManager.updateChannelI1D(encodeURIComponent(YT.live.vs1));
         YT.updateManager.updateChannelID2(encodeURIComponent(YT.live.vs2));
         YT.updateManager.updateSubscribers(f.estSubCount, g.estSubCount);
