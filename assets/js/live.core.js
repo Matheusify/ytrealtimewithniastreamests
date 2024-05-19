@@ -1,7 +1,7 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://axern.space/api/get?platform=youtube&type=channel&id=" + this.channelID, function (e) {
+    $.getJSON("https://nia-statistics.com/api/get?platform=youtube&type=channel&id=" + this.channelID, function (e) {
       if (e) {
         YT.updateManager.updateSubscribers(e.estSubCount);
         YT.updateManager.updateViews(e.estViewCount);
