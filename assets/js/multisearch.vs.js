@@ -5,7 +5,7 @@ YT.multisearch = {
       function (e) {
         $er = $("#results");
         $er.html("");
-        e.item.forEach(function (f) { 
+        e.items.forEach(function (f) { 
           if (f.id == YT.live.vs1 || f.id == YT.live.vs2) return;
           $er.append(YT.multisearch.giveHtml(f.title, f.pfp, f.id));
         });
