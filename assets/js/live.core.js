@@ -5,7 +5,7 @@ YT.live = {
       if (e) {
         YT.updateManager.updateSubscribers(e.subscribers);
         YT.updateManager.updateViews(e.views);
-        YT.updateManager.updateVideos(e.video);
+        YT.updateManager.updateVideos(e.videos);
       } else {
         YT.query.newSearch(YT.live.channelID);
       }
