@@ -57,7 +57,3 @@ This project uses a part of code from WrapPixel.
 # Disclaimer
 
 The project forks and code by default redirects back to this repo. You can view the instructions to modify the code [here](https://github.com/akshatmittal/youtube-realtime/issues/14#issuecomment-247537299).
-
-# Support
-
-This project is supported by [Metacrypt](https://www.metacrypt.org/) and [Create My Token](https://www.createmytoken.com/) which is a [free ERC20 token generator](https://www.createmytoken.com/token-generator/ethereum-erc20-generator/) and [free BEP20 token generator](https://www.createmytoken.com/token-generator/bnb-smart-chain-bep20-generator/).

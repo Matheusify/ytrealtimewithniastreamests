@@ -23,7 +23,6 @@ YT.query = {
       $.getJSON("https://mixerno.space/api/youtube-channel-counter/search/" + encodeURIComponent(e), function (e) {
         if (!e) {
           alert("No results found!");
-          location.href = baseURL;
           return;
         }
         YT.query.newSearch(e.list[0][2]);

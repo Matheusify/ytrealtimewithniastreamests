@@ -3,9 +3,9 @@ YT.live = {
   update: function () {
     $.getJSON("https://united-api.mixerno.space/youtube/channel?id=" + this.channelID, function (e) {
       if (e) {
-        YT.updateManager.updateSubscribers(e.subscribers);
-        YT.updateManager.updateViews(e.views);
-        YT.updateManager.updateVideos(e.videos)
+        YT.updateManager.updateSubscribers(e.estSubCount);
+        YT.updateManager.updateViews(e.estViewCount);
+        YT.updateManager.updateVideos(e.apiVideoCount);
       } else {
         YT.query.newSearch(YT.live.channelID);
       }
