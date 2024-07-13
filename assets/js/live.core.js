@@ -1,17 +1,11 @@
 YT.live = {
   channelID: "",
   update: function () {
-    $.getJSON("https://nia-statistics.com/api/get?platform=youtube&type=channel&id=" + this.channelID, function (e) {
+    $.getJSON("https://united-api.mixerno.space/youtube/channel?id=" + this.channelID, function (e) {
       if (e) {
-        YT.updateManager.updateSubscribers(e.estSubCount);
-        YT.updateManager.updateViews(e.estViewCount);
-      } else {
-        YT.query.newSearch(YT.live.channelID);
-      }
-    });
-    $.getJSON("https://mixerno.space/api/youtube-channel-counter/user/" + this.channelID, function (e) {
-      if (e) {
-        YT.updateManager.updateVideos(e.counts[5].count);
+        YT.updateManager.updateSubscribers(e.subscribers);
+        YT.updateManager.updateViews(e.views);
+        YT.updateManager.updateVideos(e.videos)
       } else {
         YT.query.newSearch(YT.live.channelID);
       }
