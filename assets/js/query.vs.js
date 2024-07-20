@@ -5,7 +5,7 @@ YT.query = {
       function (f) {
         $.getJSON(
           "https://mixerno.space/api/youtube-channel-counter/user/" + encodeURIComponent(YT.live.vs2),
-          function (g) {
+          function (g) {  
             YT.updateManager.updateChannelI1D(encodeURIComponent(YT.live.vs1));
             YT.updateManager.updateChannelID2(encodeURIComponent(YT.live.vs2));
             YT.updateManager.updateCover(f.user[2].count, g.user[2].count);

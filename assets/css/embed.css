@@ -1,0 +1,29 @@
+* {
+    outline: none;
+}
+
+#yt_profile {
+    text-align: left;
+    width: 128px;
+    height: 128px;
+}
+
+#yt_name {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    top: 0px;
+    left: 135px;
+}
+
+#yt_subs {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 48px;
+    color: black;
+    position: absolute;
+    top: 80px;
+    left: 135px;
+}
