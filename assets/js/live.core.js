@@ -8,8 +8,13 @@ YT.live = {
             "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
             YT.updateManager.updateSubscribers(g.mrbeastEst);
-            YT.updateManager.updateViews(h.items[0].statistics.viewCount);
-            YT.updateManager.updateVideos(h.items[0].statistics.videoCount);
+            YT.updateManager.updateViews(g.mrbeast);
+            YT.updateManager.updateVideos(h.items[0].statistics.viewCount);
+            let textyaab =
+            document.getElementById("yt_viewstext").innerHTML;
+          let idkyaab = textyaab.replace(/Subscribers/gi, "ViewStats").replace(/(API)/gi, "Count").replace(/\((.*?)\)/g, "$1");;
+          document.getElementById("yt_viewstext").textContent = idkyaab;
+          console.log(idkyaab)  
           },
         );
       });
@@ -27,9 +32,9 @@ YT.live = {
                   YT.updateManager.updateSubscribers(
                     f.items[0].statistics.subscriberCount,
                   );
-                  YT.updateManager.updateViews(f.items[0].statistics.viewCount);
+                  YT.updateManager.updateViews(f.items[0].statistics.subscriberCountAPI);
                   YT.updateManager.updateVideos(
-                    f.items[0].statistics.videoCount,
+                    f.items[0].statistics.viewCount,
                   );
                 } else {
                   YT.updateManager.updateSubscribers(
