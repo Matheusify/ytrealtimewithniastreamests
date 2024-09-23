@@ -36,6 +36,14 @@ YT.live = {
                   YT.updateManager.updateVideos(
                     f.items[0].statistics.viewCount,
                   );
+
+                  let textyaab =
+                  document.getElementById("yt_viewstext").innerHTML;
+                  if (textyaab === "ViewStats Count") {
+                let idkyaab = textyaab.replace(/ViewStats/gi, "Subscribers").replace(/Count/gi, "(API)");
+                document.getElementById("yt_viewstext").textContent = idkyaab;
+                  }
+                console.log(idkyaab)
                 } else {
                   YT.updateManager.updateSubscribers(
                     e.channels.counts[2].count,
