@@ -20,7 +20,7 @@ YT.live = {
       });
     } else {
       $.getJSON(
-        "https://studio.nia-statistics.com/api/channel/" +
+        "https://corsproxy.io/?studio.nia-statistics.com/api/channel/" +
           this.channelID,
         function (e) {
           $.getJSON(
