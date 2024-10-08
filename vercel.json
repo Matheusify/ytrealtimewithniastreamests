@@ -1,9 +1,0 @@
-{
-    "version": 2,
-    "builds": [
-      { "src": "api/youtube-subcount.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-      { "src": "/api/youtube-subcount/(.*)", "dest": "/api/youtube-subcount.js" }
-    ]
-  }
