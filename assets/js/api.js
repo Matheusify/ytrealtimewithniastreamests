@@ -50,7 +50,7 @@ app.get('/api/youtube-subcount/studio/:channelId', async (req, res) => {
     res.json({ stats: {subCount, viewCount, apiSubCount, videos, apiViews}, item: { channelLogo, channelName, channelBanner}});
   } catch (error) {
     console.error(error);
-    res.status(200).json({ success: 'Not in' });
+    res.status(200).json({ success: 'Not in studio.' });
   }
 });
 
@@ -77,3 +77,5 @@ app.get('/api/mrbeast/youtube-subcount/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch subscriber count' });
   }
 });
+
+module.exports = app;
