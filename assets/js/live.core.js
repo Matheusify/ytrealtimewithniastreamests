@@ -2,14 +2,14 @@ YT.live = {
   channelID: "",
   update: function () {
     if (this.channelID === "UCX6OQ3DkcsbYNE6H8uQQuVA") {
-      $.getJSON("https://ytrtniaests.vercel.app/api/mrbeast/youtube-subcount/", function (g) {
+      $.getJSON("https://mrb.toasted.dev/count", function (g) {
         $.getJSON(
-          "https://ytrtniaests.vercel.app/api/youtube-subcount/" +
+          "https://backend.mixerno.space/api/youtube/estv3/" +
             "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
-            YT.updateManager.updateSubscribers(g.stats.subCount);
-            YT.updateManager.updateViews(g.stats.vsCount);
-            YT.updateManager.updateVideos(h.stats.viewCount);
+            YT.updateManager.updateSubscribers(g.mrbeastEst);
+            YT.updateManager.updateViews(g.mrbeast);
+            YT.updateManager.updateVideos(h.items[0].statistics.viewCount);
             let textyaab =
             document.getElementById("yt_viewstext").innerHTML;
           let idkyaab = textyaab.replace(/Subscribers/gi, "ViewStats").replace(/(API)/gi, "Count").replace(/\((.*?)\)/g, "$1");;
@@ -20,21 +20,21 @@ YT.live = {
       });
     } else {
       $.getJSON(
-        "https://ytrtniaests.vercel.app/api/youtube-subcount/studio/" +
+        "https://studio.nia-statistics.com/api/channel/" +
           this.channelID,
         function (e) {
           $.getJSON(
-            "https://ytrtniaests.vercel.app/api/youtube-subcount/" +
+            "https://backend.mixerno.space/api/youtube/estv3/" +
               YT.live.channelID,
             function (f) {
               if ((e, f)) {
-                if (e.success == "Not in studio.") {
+                if (e.success == false) {
                   YT.updateManager.updateSubscribers(
-                    f.stats.subCount,
+                    f.items[0].statistics.subscriberCount,
                   );
-                  YT.updateManager.updateViews(f.stats.apiSubCount);
+                  YT.updateManager.updateViews(f.items[0].statistics.subscriberCountAPI);
                   YT.updateManager.updateVideos(
-                    f.stats.viewCount,
+                    f.items[0].statistics.viewCount,
                   );
 
                   let textyaab =
@@ -46,10 +46,10 @@ YT.live = {
                 console.log(idkyaab)
                 } else {
                   YT.updateManager.updateSubscribers(
-                     e.stats.subCount,
+                    e.channels.counts[2].count,
                   );
-                  YT.updateManager.updateViews(f.stats.apiSubCount);
-                  YT.updateManager.updateVideos(f.stats.viewCount);
+                  YT.updateManager.updateViews(e.channels.counts[1].count);
+                  YT.updateManager.updateVideos(f.apiVideoCount);
                   let textyab =
                     document.getElementById("yt_substext").innerHTML;
                   let idkyab = textyab.replace(/Estimated/gi, "Studio");
