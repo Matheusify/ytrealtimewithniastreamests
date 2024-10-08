@@ -77,12 +77,3 @@ app.get('/api/mrbeast/youtube-subcount/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch subscriber count' });
   }
 });
-
-
-// Start server on random port
-app.listen(8192, function() {
-  const port = this.address().port;
-  console.log(`Server is running on port ${port}`);
-});
-
-// def did not use chatgpt trust - Ify
