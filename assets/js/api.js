@@ -77,5 +77,3 @@ app.get('/api/mrbeast/youtube-subcount/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch subscriber count' });
   }
 });
-
-module.exports = app;
