@@ -2,26 +2,26 @@ YT.live = {
   channelID: "",
   update: function () {
     if (this.channelID === "UCX6OQ3DkcsbYNE6H8uQQuVA") {
-      $.getJSON("https://mrb.toasted.dev/count", function (g) {
+      $.getJSON("/api/mrbeast/youtube-subcount/", function (g) {
         $.getJSON(
-          "https://backend.mixerno.space/api/youtube/estv3/" +
-            "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          "/api/youtube-subcount/" + "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
             YT.updateManager.updateSubscribers(g.mrbeastEst);
             YT.updateManager.updateViews(g.mrbeast);
             YT.updateManager.updateVideos(h.items[0].statistics.viewCount);
-            let textyaab =
-            document.getElementById("yt_viewstext").innerHTML;
-          let idkyaab = textyaab.replace(/Subscribers/gi, "ViewStats").replace(/(API)/gi, "Count").replace(/\((.*?)\)/g, "$1");;
-          document.getElementById("yt_viewstext").textContent = idkyaab;
-          console.log(idkyaab)  
-          },
+            let textyaab = document.getElementById("yt_viewstext").innerHTML;
+            let idkyaab = textyaab
+              .replace(/Subscribers/gi, "ViewStats")
+              .replace(/(API)/gi, "Count")
+              .replace(/\((.*?)\)/g, "$1");
+            document.getElementById("yt_viewstext").textContent = idkyaab;
+            console.log(idkyaab);
+          }
         );
       });
     } else {
       $.getJSON(
-        "https://studio.nia-statistics.com/api/channel/" +
-          this.channelID,
+        "https://studio.nia-statistics.com/api/channel/" + this.channelID,
         function (e) {
           $.getJSON(
             "https://backend.mixerno.space/api/youtube/estv3/" +
@@ -30,23 +30,28 @@ YT.live = {
               if ((e, f)) {
                 if (e.success == false) {
                   YT.updateManager.updateSubscribers(
-                    f.items[0].statistics.subscriberCount,
+                    f.items[0].statistics.subscriberCount
                   );
-                  YT.updateManager.updateViews(f.items[0].statistics.subscriberCountAPI);
+                  YT.updateManager.updateViews(
+                    f.items[0].statistics.subscriberCountAPI
+                  );
                   YT.updateManager.updateVideos(
-                    f.items[0].statistics.viewCount,
+                    f.items[0].statistics.viewCount
                   );
 
                   let textyaab =
-                  document.getElementById("yt_viewstext").innerHTML;
+                    document.getElementById("yt_viewstext").innerHTML;
                   if (textyaab === "ViewStats Count") {
-                let idkyaab = textyaab.replace(/ViewStats/gi, "Subscribers").replace(/Count/gi, "(API)");
-                document.getElementById("yt_viewstext").textContent = idkyaab;
+                    let idkyaab = textyaab
+                      .replace(/ViewStats/gi, "Subscribers")
+                      .replace(/Count/gi, "(API)");
+                    document.getElementById("yt_viewstext").textContent =
+                      idkyaab;
                   }
-                console.log(idkyaab)
+                  console.log(idkyaab);
                 } else {
                   YT.updateManager.updateSubscribers(
-                    e.channels.counts[2].count,
+                    e.channels.counts[2].count
                   );
                   YT.updateManager.updateViews(e.channels.counts[1].count);
                   YT.updateManager.updateVideos(f.apiVideoCount);
@@ -58,9 +63,9 @@ YT.live = {
               } else {
                 YT.query.newSearch(YT.live.channelID);
               }
-            },
+            }
           );
-        },
+        }
       );
     }
   },
