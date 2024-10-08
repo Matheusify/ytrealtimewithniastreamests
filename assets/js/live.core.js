@@ -2,9 +2,9 @@ YT.live = {
   channelID: "",
   update: function () {
     if (this.channelID === "UCX6OQ3DkcsbYNE6H8uQQuVA") {
-      $.getJSON("http://localhost:8192/api/mrbeast/youtube-subcount/", function (g) {
+      $.getJSON("https://ytrtniaests.vercel.app/api/mrbeast/youtube-subcount/", function (g) {
         $.getJSON(
-          "http://localhost:8192/api/youtube-subcount/" +
+          "https://ytrtniaests.vercel.app/api/youtube-subcount/" +
             "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
             YT.updateManager.updateSubscribers(g.stats.subCount);
@@ -20,11 +20,11 @@ YT.live = {
       });
     } else {
       $.getJSON(
-        "http://localhost:8192/api/youtube-subcount/studio/" +
+        "https://ytrtniaests.vercel.app/api/youtube-subcount/studio/" +
           this.channelID,
         function (e) {
           $.getJSON(
-            "http://localhost:8192/api/youtube-subcount/" +
+            "https://ytrtniaests.vercel.app/api/youtube-subcount/" +
               YT.live.channelID,
             function (f) {
               if ((e, f)) {
