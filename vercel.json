@@ -1,7 +1,19 @@
 {
     "version": 2,
-    "rewrites": [
-      { "source": "/api/(.*)" },
-      { "source": "/(.*)" }
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/youtube-subcount/(.*)",
+        "dest": "/api/youtube-subcount/$1"
+      },
+      {
+        "src": "/api/mrbeast/youtube-subcount",
+        "dest": "/api/mrbeast/youtube-subcount"
+      }
     ]
   }
