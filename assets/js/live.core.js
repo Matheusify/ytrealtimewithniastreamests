@@ -21,22 +21,22 @@ YT.live = {
       });
     } else {
       $.getJSON(
-        "https://studio.nia-statistics.com/api/channel/" + this.channelID,
+        "/api/youtube-subcount/studio/" + this.channelID,
         function (e) {
           $.getJSON(
-            "https://backend.mixerno.space/api/youtube/estv3/" +
+            "/api/youtube-subcount/" +
               YT.live.channelID,
             function (f) {
               if ((e, f)) {
-                if (e.success == false) {
+                if (e.success == "Not in studio.") {
                   YT.updateManager.updateSubscribers(
-                    f.items[0].statistics.subscriberCount
+                    f.stats.subCount
                   );
                   YT.updateManager.updateViews(
-                    f.items[0].statistics.subscriberCountAPI
+                    f.stats.apiSubCount
                   );
                   YT.updateManager.updateVideos(
-                    f.items[0].statistics.viewCount
+                    f.stats.viewCount
                   );
 
                   let textyaab =
@@ -51,10 +51,10 @@ YT.live = {
                   console.log(idkyaab);
                 } else {
                   YT.updateManager.updateSubscribers(
-                    e.channels.counts[2].count
+                    e.stats.subCount
                   );
-                  YT.updateManager.updateViews(e.channels.counts[1].count);
-                  YT.updateManager.updateVideos(f.apiVideoCount);
+                  YT.updateManager.updateViews(e.stats.apiSubCount);
+                  YT.updateManager.updateVideos(f.stats.viewCount);
                   let textyab =
                     document.getElementById("yt_substext").innerHTML;
                   let idkyab = textyab.replace(/Estimated/gi, "Studio");
