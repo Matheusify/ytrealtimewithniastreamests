@@ -36,7 +36,7 @@ YT.live = {
                     f.stats.apiSubCount
                   );
                   YT.updateManager.updateVideos(
-                    f.stats.viewCount
+                    f.stats.totalViews
                   );
 
                   let textyaab =
@@ -54,7 +54,7 @@ YT.live = {
                     e.stats.subCount
                   );
                   YT.updateManager.updateViews(e.stats.apiSubCount);
-                  YT.updateManager.updateVideos(f.stats.viewCount);
+                  YT.updateManager.updateVideos(f.stats.totalViews);
                   let textyab =
                     document.getElementById("yt_substext").innerHTML;
                   let idkyab = textyab.replace(/Estimated/gi, "Studio");
