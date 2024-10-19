@@ -6,8 +6,8 @@ YT.live = {
         $.getJSON(
           "/api/youtube-subcount/" + "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
-            YT.updateManager.updateSubscribers(g.mrbeastEst);
-            YT.updateManager.updateViews(g.mrbeast);
+            YT.updateManager.updateSubscribers(g.stats.subCount);
+            YT.updateManager.updateViews(g.stats.vsCount);
             YT.updateManager.updateVideos(h.stats.viewCount;
             let textyaab = document.getElementById("yt_viewstext").innerHTML;
             let idkyaab = textyaab
