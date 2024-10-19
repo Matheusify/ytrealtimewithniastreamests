@@ -8,7 +8,7 @@ YT.live = {
           function (h) {
             YT.updateManager.updateSubscribers(g.mrbeastEst);
             YT.updateManager.updateViews(g.mrbeast);
-            YT.updateManager.updateVideos(h.items[0].statistics.viewCount);
+            YT.updateManager.updateVideos(h.stats.viewCount;
             let textyaab = document.getElementById("yt_viewstext").innerHTML;
             let idkyaab = textyaab
               .replace(/Subscribers/gi, "ViewStats")
