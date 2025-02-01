@@ -2,13 +2,13 @@ YT.live = {
   channelID: "",
   update: function () {
     if (this.channelID === "UCX6OQ3DkcsbYNE6H8uQQuVA") {
-      $.getJSON("/api/youtube-subcount/UCX6OQ3DkcsbYNE6H8uQQuVA", function (g) {
+      $.getJSON("/api/mrbeast/youtube-subcount/", function (g) {
         $.getJSON(
           "/api/youtube-subcount/" + "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
-            YT.updateManager.updateSubscribers(g.stats.subCount);
+            YT.updateManager.updateSubscribers(h.stats.subCount);
             YT.updateManager.updateViews(g.stats.vsCount);
-            YT.updateManager.updateVideos(g.stats.viewCount);
+            YT.updateManager.updateVideos(h.stats.viewCount);
             let textyaab = document.getElementById("yt_viewstext").innerHTML;
             let idkyaab = textyaab
               .replace(/Subscribers/gi, "ViewStats")
