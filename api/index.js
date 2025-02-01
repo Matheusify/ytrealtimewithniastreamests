@@ -71,7 +71,7 @@ app.get("/api/youtube-subcount/studio/:channelId", async (req, res) => {
 app.get("/api/mrbeast/youtube-subcount/", async (req, res) => {
   try {
     // Fetch data from the external API
-    const response = await axios.get(`https://mrb.toasted.dev/count`);
+    const response = await axios.get(`https://mrbeast.subscribercount.app/data`);
     const respons2e = await axios.get(
       `https://backend.mixerno.space/api/youtube/estv3/UCX6OQ3DkcsbYNE6H8uQQuVA`
     );
