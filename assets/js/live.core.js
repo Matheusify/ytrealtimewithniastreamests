@@ -2,7 +2,7 @@ YT.live = {
   channelID: "",
   update: function () {
     if (this.channelID === "UCX6OQ3DkcsbYNE6H8uQQuVA") {
-      $.getJSON("/api/mrbeast/youtube-subcount/", function (g) {
+      $.getJSON("/api/youtube-subcount/UCX6OQ3DkcsbYNE6H8uQQuVA", function (g) {
         $.getJSON(
           "/api/youtube-subcount/" + "UCX6OQ3DkcsbYNE6H8uQQuVA",
           function (h) {
