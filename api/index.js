@@ -51,6 +51,14 @@ app.get("/api/youtube-subcount/studio/:channelId", async (req, res) => {
       `https://backend.mixerno.space/api/youtube/estv3/${channelId}`
     );
     const info = await response.json();
+    if (info.verifiedSubCount === false) {
+   const success = "Not in studio."
+
+   res.json({
+   success
+});
+};
+  if (info.verifiedSubCount === true) {
     const subCount = info.subcount;
     const viewCount = info.viewcount;
     const apiSubCount = respons2e.data.items[0].statistics.subscriberCountAPI;
@@ -64,6 +72,7 @@ app.get("/api/youtube-subcount/studio/:channelId", async (req, res) => {
       stats: { subCount, viewCount, apiSubCount, videos, apiViews },
       item: { channelLogo, channelName, channelBanner },
     });
+}
   } catch (error) {
     console.error(error);
     res.status(200).json({ success: "Not in studio." });
