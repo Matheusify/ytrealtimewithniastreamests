@@ -18,6 +18,7 @@ YT.live = {
             console.log(idkyaab);
           }
         );
+       }
       });
     } else {
       $.getJSON(
