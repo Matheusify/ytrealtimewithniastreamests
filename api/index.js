@@ -16,14 +16,14 @@ app.get("/api/youtube-subcount/:channelId", async (req, res) => {
       `https://ests.sctools.org/api/get/${channelId}`
     );
       const respons2e = await fetch(
-      `https://estv4.mixerno.space/api/v1/get/${channelId}`
+      `https://backend.mixerno.space/api/youtube/estv3/${channelId}`
     );
     const info = await response.json();
     const inf2o = await respons2e.json();
     const subCount = info.stats.estCount;
     const totalViews = info.stats.viewCount;
-    const apiViews = inf2o.data.apiCounts[1];
-    const apiSubCount = inf2o.data.apiCounts[0];
+    const apiViews = inf2o.items[0].statistics.viewCountAPI;
+    const apiSubCount = info.stats.apiCount;
     const videos = info.stats.videoCount;
     const channelLogo = info.info.avatar;
     const channelName = info.info.name;
