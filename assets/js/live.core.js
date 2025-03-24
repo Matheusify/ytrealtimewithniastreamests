@@ -74,7 +74,7 @@ YT.live = {
 
 
 
-  timer: null,
+  timer: null;
   start: function () {
     this.stop();
     this.timer = setInterval(function (e, f) {
