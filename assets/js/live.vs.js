@@ -10,7 +10,6 @@ YT.live = {
       });
     });
   });
-    });
   },
   timer: null,
   setVS: function (e, f) {
