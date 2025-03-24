@@ -45,18 +45,18 @@ app.get("/api/youtube-subcount/studio/:channelId", async (req, res) => {
   try {
     // Fetch data from the external API
     const response = await fetch(
-      `https://cors.stats100.xyz/https://studio.nia-statistics.com/api/channel/${channelId}`
+      `https://api-v2.nextcounts.com/api/youtube/channel/${channelId}`
     );
     const respons2e = await axios.get(
       `https://backend.mixerno.space/api/youtube/estv3/${channelId}`
     );
     const info = await response.json();
-    const subCount = info.channels.counts[2].count;
-    const viewCount = info.channels.counts[1].count;
+    const subCount = info.subcount;
+    const viewCount = info.viewcount;
     const apiSubCount = respons2e.data.items[0].statistics.subscriberCountAPI;
     const videos = respons2e.data.items[0].statistics.videoCount;
     const apiViews = respons2e.data.items[0].statistics.viewCountAPI;
-    const channelLogo = info.currentChannels.image;
+    const channelLogo = info.userImg;
     const channelName = respons2e.data.items[0].snippet.title;
     const channelBanner = `https://www.banner.yt/${channelId}`;
 
