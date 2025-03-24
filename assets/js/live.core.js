@@ -58,8 +58,7 @@ YT.live = {
             }
           );
         }
-      );
-        }
+    }
 
   timer: null,
   start: function () {
