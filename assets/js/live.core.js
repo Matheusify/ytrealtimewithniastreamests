@@ -19,12 +19,20 @@ YT.live = {
           }
         );
       });
- {
+          }
+        );
+      });
+    } else {
+
       $.getJSON(
-        "/api/youtube-subcount/" + this.channelID,
+        "/api/youtube-subcount/studio/" + this.channelID,
         function (e) {
-              if (e) {
-                if (e.success == "Not in studio.") {
+          $.getJSON(
+            "/api/youtube-subcount/" +
+              YT.live.channelID,
+            function (f) {
+              if ((e, f)) {
+                 if (e.success == "Not in studio.") {
                   YT.updateManager.updateSubscribers(
                     f.stats.subCount
                   );
@@ -51,14 +59,19 @@ YT.live = {
                   );
                   YT.updateManager.updateViews(e.stats.apiSubCount);
                   YT.updateManager.updateVideos(f.stats.totalViews);
+                                     let textyab =
+                    document.getElementById("yt_substext").innerHTML;
+                  let idkyab = textyab.replace(/Estimated/gi, "Studio");
+                  document.getElementById("yt_substext").textContent = idkyab;
                 }
               } else {
                 YT.query.newSearch(YT.live.channelID);
-              }
-            }
+           }
           );
         }
+      );
     }
+  },
 
   timer: null,
   start: function () {
