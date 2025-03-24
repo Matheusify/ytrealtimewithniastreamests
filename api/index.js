@@ -86,7 +86,7 @@ app.get("/api/mrbeast/youtube-subcount/", async (req, res) => {
     const apiViews = respons2e.data.items[0].statistics.viewCountAPI;
     const channelLogo = respons2e.data.items[0].brandingSettings.image;
     const channelName = respons2e.data.items[0].snippet.title;
-    const channelBanner = `https://www.banner.yt/${channelId}`;
+    const channelBanner = `https://www.banner.yt/UCX6OQ3DkcsbYNE6H8uQQuVA`;
 
     res.json({
       stats: {
