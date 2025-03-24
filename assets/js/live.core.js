@@ -18,8 +18,8 @@ YT.live = {
             console.log(idkyaab);
           }
         );
-       }
       });
+     }
     } else {
       $.getJSON(
         "/api/youtube-subcount/studio/" + this.channelID,
