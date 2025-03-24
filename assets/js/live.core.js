@@ -19,8 +19,6 @@ YT.live = {
           }
         );
       });
-     }
-    }
      else {
       $.getJSON(
         "/api/youtube-subcount/studio/" + this.channelID,
@@ -68,6 +66,8 @@ YT.live = {
         });
     },
   },
+},
+    },
 },
 
 
