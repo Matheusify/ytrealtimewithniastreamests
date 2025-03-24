@@ -27,7 +27,7 @@ app.get("/api/youtube-subcount/:channelId", async (req, res) => {
     const videos = info.stats.videoCount;
     const channelLogo = info.info.avatar;
     const channelName = info.info.name;
-    const channelBanner = inf2o.data.info[2];
+    const channelBanner = `https://www.banner.yt/${channelId}`;
 
     res.json({
       stats: { subCount, totalViews, apiSubCount, videos, apiViews },
@@ -58,7 +58,7 @@ app.get("/api/youtube-subcount/studio/:channelId", async (req, res) => {
     const apiViews = respons2e.data.items[0].statistics.viewCountAPI;
     const channelLogo = info.currentChannels.image;
     const channelName = respons2e.data.items[0].snippet.title;
-    const channelBanner = respons2e.data.items[0].brandingSettings.image;
+    const channelBanner = `https://www.banner.yt/${channelId}`;
 
     res.json({
       stats: { subCount, viewCount, apiSubCount, videos, apiViews },
@@ -86,7 +86,7 @@ app.get("/api/mrbeast/youtube-subcount/", async (req, res) => {
     const apiViews = respons2e.data.items[0].statistics.viewCountAPI;
     const channelLogo = respons2e.data.items[0].brandingSettings.image;
     const channelName = respons2e.data.items[0].snippet.title;
-    const channelBanner = respons2e.data.items[0].brandingSettings.image;
+    const channelBanner = `https://www.banner.yt/${channelId}`;
 
     res.json({
       stats: {
