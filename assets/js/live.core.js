@@ -19,8 +19,8 @@ YT.live = {
           }
         );
       });
-     }
-    } else if (this.channelID != "UCX6OQ3DkcsbYNE6H8uQQuVA") {
+     },
+    }; else {
       $.getJSON(
         "/api/youtube-subcount/studio/" + this.channelID,
         function (e) {
