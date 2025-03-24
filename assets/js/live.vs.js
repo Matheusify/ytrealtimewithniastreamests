@@ -9,7 +9,6 @@ YT.live = {
         YT.updateManager.updateSubscribers(g.stats.subCount, h.stats.subCount);
       });
     });
-  });
   },
   timer: null,
   setVS: function (e, f) {
