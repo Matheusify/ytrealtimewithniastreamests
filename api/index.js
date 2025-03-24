@@ -13,19 +13,19 @@ app.get("/api/youtube-subcount/:channelId", async (req, res) => {
   try {
     // Fetch data from the external API
     const response = await axios.get(
-      `https://livecounts.xyz/api/youtube-live-subscriber-count/live/${channelId}`
+      `https://ests.sctools.org/api/get/${channelId}`
     );
-    const respons2e = await axios.get(
-      `https://backend.mixerno.space/api/youtube/estv3/${channelId}`
+      const respons2e = await axios.get(
+      `https://estv4.mixerno.space/api/v1/get/${channelId}`
     );
-    const subCount = response.data.counts[0];
-    const totalViews = response.data.counts[1];
-    const apiViews = respons2e.data.items[0].statistics.viewCountAPI;
-    const apiSubCount = respons2e.data.items[0].statistics.subscriberCountAPI;
-    const videos = respons2e.data.items[0].statistics.videoCount;
-    const channelLogo = respons2e.data.items[0].snippet.thumbnails.default.url;
-    const channelName = respons2e.data.items[0].snippet.title;
-    const channelBanner = respons2e.data.items[0].brandingSettings.image;
+    const subCount = response.stats.estCount;
+    const totalViews = response.stats.viewCount;
+    const apiViews = respons2e.data.apiCounts[1];
+    const apiSubCount = respons2e.data.apiCounts[0];
+    const videos = response.stats.videoCount;
+    const channelLogo = response.info.avatar;
+    const channelName = response.info.name;
+    const channelBanner = respons2e.data.info[2];
 
     res.json({
       stats: { subCount, totalViews, apiSubCount, videos, apiViews },
