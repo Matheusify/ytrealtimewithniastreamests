@@ -55,7 +55,7 @@ YT.live = {
                   );
                   YT.updateManager.updateViews(e.stats.apiSubCount);
                   YT.updateManager.updateVideos(f.stats.totalViews);
-                                     let textyab =
+                  let textyab =
                     document.getElementById("yt_substext").innerHTML;
                   let idkyab = textyab.replace(/Estimated/gi, "Studio");
                   document.getElementById("yt_substext").textContent = idkyab;
