@@ -62,7 +62,6 @@ YT.live = {
                 }
               } else {
                 YT.query.newSearch(YT.live.channelID);
-
               }
             },
           );
@@ -70,7 +69,6 @@ YT.live = {
       );
     }
   },
-}
 
 
 
