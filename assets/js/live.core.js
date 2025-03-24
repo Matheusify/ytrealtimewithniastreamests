@@ -19,8 +19,7 @@ YT.live = {
           }
         );
       });
-    }
-    ) {
+ {
       $.getJSON(
         "/api/youtube-subcount/" + this.channelID,
         function (e) {
