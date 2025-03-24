@@ -69,6 +69,8 @@ YT.live = {
         },
       );
     }
+  }
+}
 
 
   timer: null,
