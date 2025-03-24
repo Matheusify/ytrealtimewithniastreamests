@@ -12,20 +12,22 @@ app.get("/api/youtube-subcount/:channelId", async (req, res) => {
 
   try {
     // Fetch data from the external API
-    const response = await axios.get(
+    const response = await fetch(
       `https://ests.sctools.org/api/get/${channelId}`
     );
-      const respons2e = await axios.get(
+      const respons2e = await fetch(
       `https://estv4.mixerno.space/api/v1/get/${channelId}`
     );
-    const subCount = response.stats.estCount;
-    const totalViews = response.stats.viewCount;
-    const apiViews = respons2e.data.apiCounts[1];
-    const apiSubCount = respons2e.data.apiCounts[0];
-    const videos = response.stats.videoCount;
-    const channelLogo = response.info.avatar;
-    const channelName = response.info.name;
-    const channelBanner = respons2e.data.info[2];
+    const info = await response.json();
+    const inf2o = await respons2e.json();
+    const subCount = info.stats.estCount;
+    const totalViews = info.stats.viewCount;
+    const apiViews = inf2o.data.apiCounts[1];
+    const apiSubCount = inf2o.data.apiCounts[0];
+    const videos = info.stats.videoCount;
+    const channelLogo = info.info.avatar;
+    const channelName = info.info.name;
+    const channelBanner = inf2o.data.info[2];
 
     res.json({
       stats: { subCount, totalViews, apiSubCount, videos, apiViews },
@@ -103,5 +105,8 @@ app.get("/api/mrbeast/youtube-subcount/", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch subscriber count" });
   }
 });
+
+
+app.listen(6942, () => console.log("Server ready on port 3000."));
 
 module.exports = app;
